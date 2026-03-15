@@ -24,7 +24,7 @@ class CustomNoteItem extends StatelessWidget {
               style: TextStyle(fontSize: 36.sp, color: AppColors.blackColor),
             ),
             subtitle: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12.0),
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: Text(
                 "Build Your Career With\nLotfi Mohammed",
                 style: TextStyle(

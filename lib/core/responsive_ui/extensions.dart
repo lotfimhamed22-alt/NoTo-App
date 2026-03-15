@@ -1,3 +1,5 @@
+// ignore_for_file: strict_top_level_inference
+
 import 'package:notes/core/responsive_ui/dimensions.dart';
 
 extension Extensions on num {
