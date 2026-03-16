@@ -3,7 +3,8 @@ import 'package:notes/core/app_colors/app_colors.dart';
 import 'package:notes/core/responsive_ui/extensions.dart';
 
 class CustomContainerIcon extends StatelessWidget {
-  const CustomContainerIcon({super.key});
+  const CustomContainerIcon({super.key, required this.icon});
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class CustomContainerIcon extends StatelessWidget {
         color: AppColors.whiteOpacity,
         borderRadius: BorderRadius.circular(18),
       ),
-      child: Icon(Icons.search, size: 36.w),
+      child: Icon(icon, size: 36.w),
     );
   }
 }

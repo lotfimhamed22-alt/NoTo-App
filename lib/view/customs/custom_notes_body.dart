@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:notes/core/responsive_ui/extensions.dart';
+import 'package:notes/view/customs/custom_appbar.dart';
 import 'package:notes/view/customs/custom_container_icon.dart';
 import 'package:notes/view/customs/custom_list_view.dart';
 
@@ -14,13 +15,7 @@ class CustomNotesBody extends StatelessWidget {
       child: Column(
         children: [
           Gap(70.h),
-          Row(
-            children: [
-              Text("Notes", style: TextStyle(fontSize: 24.sp)),
-              Spacer(),
-              CustomContainerIcon(),
-            ],
-          ),
+          CustomAppbar(text: "Notes", icon: Icons.search),
           Gap(18.h),
           Expanded(child: CustomListView()),
         ],
