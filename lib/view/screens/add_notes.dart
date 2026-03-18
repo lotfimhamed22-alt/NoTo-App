@@ -13,8 +13,17 @@ class AddNotes extends StatelessWidget {
   }
 }
 
-class AddNoteBody extends StatelessWidget {
+class AddNoteBody extends StatefulWidget {
   const AddNoteBody({super.key});
+
+  @override
+  State<AddNoteBody> createState() => _AddNoteBodyState();
+}
+
+class _AddNoteBodyState extends State<AddNoteBody> {
+  TextEditingController _titleController = TextEditingController();
+
+  TextEditingController _subTitleController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +34,17 @@ class AddNoteBody extends StatelessWidget {
           Gap(70.h),
           CustomAppbar(text: "Edit Note", icon: Icons.check),
           Gap(50.h),
-          CustomTextField(lableText: "Title", maxLines: 1),
+          CustomTextField(
+            lableText: "Title",
+            maxLines: 1,
+            controller: _titleController,
+          ),
           Gap(15.h),
-          CustomTextField(lableText: "Content", maxLines: 5),
+          CustomTextField(
+            lableText: "Content",
+            maxLines: 5,
+            controller: _subTitleController,
+          ),
         ],
       ),
     );

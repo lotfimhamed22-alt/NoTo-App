@@ -1,6 +1,6 @@
 import 'package:hive_flutter/adapters.dart';
 import 'package:hive/hive.dart';
-part  'item_node_model.g.dart';
+part 'item_node_model.g.dart';
 
 @HiveType(typeId: 0)
 class ItemNodeModel extends HiveObject {
