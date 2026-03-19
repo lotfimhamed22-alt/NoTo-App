@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes/core/app_colors/app_colors.dart';
 import 'package:notes/core/responsive_ui/extensions.dart';
 import 'package:notes/model/item_node_model.dart';
-import 'package:notes/view/screens/add_notes.dart';
+import 'package:notes/view/screens/edit_notes.dart';
+import 'package:notes/view_model/note/note_cubit.dart';
 
 class CustomNoteItem extends StatelessWidget {
   const CustomNoteItem({super.key, required this.data});
@@ -16,7 +18,7 @@ class CustomNoteItem extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return AddNotes();
+              return AddNotes(note: data);
             },
           ),
         );
@@ -48,7 +50,11 @@ class CustomNoteItem extends StatelessWidget {
                 ),
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  data.delete();
+                  context.read<NoteCubit>().fetchAllNotes();
+                  print("delete");
+                },
                 icon: Icon(
                   Icons.delete,
                   size: 44.sp,

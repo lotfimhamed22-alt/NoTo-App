@@ -11,9 +11,7 @@ class SimpleBlocObserve implements BlocObserver {
   void onClose(BlocBase<dynamic> bloc) {}
 
   @override
-  void onCreate(BlocBase<dynamic> bloc) {
-    // TODO: implement onCreate
-  }
+  void onCreate(BlocBase<dynamic> bloc) {}
 
   @override
   void onDone(
@@ -21,25 +19,17 @@ class SimpleBlocObserve implements BlocObserver {
     Object? event, [
     Object? error,
     StackTrace? stackTrace,
-  ]) {
-    // TODO: implement onDone
-  }
+  ]) {}
 
   @override
-  void onError(BlocBase<dynamic> bloc, Object error, StackTrace stackTrace) {
-    // TODO: implement onError
-  }
+  void onError(BlocBase<dynamic> bloc, Object error, StackTrace stackTrace) {}
 
   @override
-  void onEvent(Bloc<dynamic, dynamic> bloc, Object? event) {
-    // TODO: implement onEvent
-  }
+  void onEvent(Bloc<dynamic, dynamic> bloc, Object? event) {}
 
   @override
   void onTransition(
     Bloc<dynamic, dynamic> bloc,
     Transition<dynamic, dynamic> transition,
-  ) {
-    // TODO: implement onTransition
-  }
+  ) {}
 }

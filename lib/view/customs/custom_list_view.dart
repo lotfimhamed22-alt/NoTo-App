@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes/model/item_node_model.dart';
 import 'package:notes/view/customs/custom_note_item.dart';
 import 'package:notes/view_model/note/note_cubit.dart';
 
@@ -33,6 +32,7 @@ class _CustomListViewState extends State<CustomListView> {
               );
             } else
               Text("falure");
+            return null;
           },
         );
       },

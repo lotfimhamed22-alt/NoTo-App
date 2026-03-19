@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
@@ -6,6 +8,7 @@ import 'package:notes/model/item_node_model.dart';
 import 'package:notes/view/customs/custom_button.dart';
 import 'package:notes/view/customs/custom_text_field.dart';
 import 'package:notes/view_model/add_note/add_note_cubit.dart';
+import 'package:intl/intl.dart';
 import 'package:notes/view_model/note/note_cubit.dart';
 
 class CustomFormKey extends StatefulWidget {
@@ -31,6 +34,7 @@ class _CustomFormKeyState extends State<CustomFormKey> {
       child: BlocConsumer<AddNoteCubit, AddNoteState>(
         listener: (context, state) {
           if (state is AddNoteSuccess) {
+            context.read<NoteCubit>().fetchAllNotes();
             Navigator.pop(context);
           }
         },
@@ -62,14 +66,20 @@ class _CustomFormKeyState extends State<CustomFormKey> {
                 onTap: () {
                   if (_globalKey.currentState!.validate()) {
                     _globalKey.currentState!.save();
+
+                    var currentDate = DateTime.now();
+                    String formattedDate = DateFormat(
+                      'yyyy-MM-dd kk:mm',
+                    ).format(currentDate);
+
                     var note = ItemNodeModel(
                       title: title!,
                       subTitle: subTitle!,
-                      date: DateTime.now().toString(),
+                      date: formattedDate,
                       color: Colors.red.toARGB32(),
                     );
+
                     context.read<AddNoteCubit>().addNote(note);
-                    setState(() {});
                   }
                 },
               ),
